@@ -22,6 +22,11 @@ pip install -r requirements.txt
 ```
 Also, PCL is needed for fast-gicp submodule.
 
+### Downgrade setuptools package:
+```
+pip install setuptools==67.0.0
+```
+
 Install submodules
 
 ```bash
