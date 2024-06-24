@@ -22,6 +22,7 @@ pip install -r requirements.txt
 ```
 Also, PCL is needed for fast-gicp submodule.
 
+### Install CUDA 11.8 and Nvidia Driver 470.
 ### Downgrade setuptools package:
 ```
 pip install setuptools==67.0.0
