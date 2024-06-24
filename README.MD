@@ -27,6 +27,10 @@ Also, PCL is needed for fast-gicp submodule.
 ```
 pip install setuptools==67.0.0
 ```
+### Install gcc 11.2
+```
+ conda install anaconda::libgcc-ng 
+```
 
 Install submodules
 
