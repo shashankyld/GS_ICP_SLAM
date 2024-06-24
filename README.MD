@@ -32,6 +32,46 @@ pip install setuptools==67.0.0
  conda install anaconda::libgcc-ng 
 ```
 
+### REGARDING GCC ##########
+When you have multiple versions of GCC installed, setting CXX and CC environment variables helps ensure that the build process uses the correct version of the compiler. Here's what these commands do:
+
+export CXX=g++: This sets the C++ compiler to g++. When a build process requires a C++ compiler, it will use the g++ specified by this environment variable.
+export CC=gcc: This sets the C compiler to gcc. When a build process requires a C compiler, it will use the gcc specified by this environment variable.
+
+To use specific versions of gcc and g++, you can specify the exact paths to the desired versions:
+Find the Path of the Specific Compiler Versions:
+Use which or whereis to locate the specific versions of gcc and g++.
+
+```
+which gcc-7
+which g++-7
+```
+Let's assume the paths returned are /usr/bin/gcc-7 and /usr/bin/g++-7.
+
+Set the Environment Variables to Specific Versions:
+
+```
+export CC=/usr/bin/gcc-7
+export CXX=/usr/bin/g++-7
+```
+Verify the Settings:
+Ensure that the environment variables are set correctly:
+
+```
+echo $CC
+echo $CXX
+```
+The output should be the paths you set, e.g., /usr/bin/gcc-7 and /usr/bin/g++-7.
+
+Re-attempt the Installation:
+Now, try installing the package again:
+
+```
+pip install submodules/diff-gaussian-rasterization/
+```
+This approach ensures that the build process uses the correct versions of gcc and g++, resolving potential conflicts with multiple versions of compilers on your system.
+
+
 Install submodules
 
 ```bash
